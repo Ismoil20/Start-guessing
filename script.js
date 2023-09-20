@@ -1,18 +1,5 @@
 'use strict';
 
-// document.querySelector('.uzbek').addEventListener('click', function () {
-//   document.querySelector('.again').textContent = 'Qayta!';
-//   document.querySelector('.between').textContent =
-//     "(1 dan 20 oralig'idagi sonlar)";
-//   document.querySelector('h1').textContent = "Men o'ylagan raqamni toping!";
-//   document.querySelector('.message').textContent = 'Qani kettik...';
-//   document.querySelector('.check').textContent = 'Tekshiring!';
-//   document.querySelector('.label-score').textContent =
-//     ' 💯 Urinishlar soni:    20';
-//   document.querySelector('.label-highscore').textContent =
-//     ' 🥇 Eng yuqori ball:   0';
-// });
-
 document.querySelector('.english').addEventListener('click', function () {
   document.querySelector('.again').textContent = 'Again!';
   document.querySelector('.between').textContent = '(Between 1 and 20)';
