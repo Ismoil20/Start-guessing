@@ -31,14 +31,15 @@ function showMessage(message) {
 }
 const NUMBER = document.querySelector('.number');
 
-document.querySelector('.check').addEventListener('click', () => {
+document.querySelector('.check').addEventListener('click', isCheck);
+function isCheck() {
   let guessNumber = Number(document.querySelector('.guess').value);
 
   if (score > 1) {
     if (!guessNumber) {
       showMessage('🙅🏼‍♀️No number!');
     } else if (guessNumber !== computerNumber) {
-      showMessage((guessNumber > computerNumber) ? 'Too High!' : 'Too Low');
+      showMessage(guessNumber > computerNumber ? 'Too High!' : 'Too Low');
       score--;
       document.querySelector('.score').textContent = score;
     } else {
@@ -47,14 +48,15 @@ document.querySelector('.check').addEventListener('click', () => {
 
       document.querySelector('body').style.backgroundColor = '#60b347';
       NUMBER.style.width = '25rem';
-      highScore = (score > highScore) ? score : highScore;
+      highScore = score > highScore ? score : highScore;
       document.querySelector('.highScore').textContent = highScore;
     }
   } else {
     showMessage('😔 You lost the game!');
     document.querySelector('.score').textContent = 0;
   }
-});
+}
+
 document.querySelector('.again').addEventListener('click', function () {
   computerNumber = Math.trunc(Math.random() * 20) + 1;
   score = 20;
@@ -80,4 +82,7 @@ document.querySelector('.uzbek').addEventListener('click', () => {
   document.querySelector(
     '.label-highscore'
   ).innerHTML = `🥇 yuqori ball:<span class="highscore">0</span>`;
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Enter') isCheck();
 });
